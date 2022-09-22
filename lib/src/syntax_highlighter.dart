@@ -17,6 +17,29 @@ class SyntaxHighlighterStyle {
     this.constantStyle,
   });
 
+
+  SyntaxHighlighterStyle copyWith({
+    TextStyle? baseStyle,
+    TextStyle? numberStyle,
+    TextStyle? commentStyle,
+    TextStyle? keywordStyle,
+    TextStyle? stringStyle,
+    TextStyle? punctuationStyle,
+    TextStyle? classStyle,
+    TextStyle? constantStyle,
+}){
+    return SyntaxHighlighterStyle(
+        baseStyle: baseStyle ?? this.baseStyle,
+        numberStyle: numberStyle ?? this.numberStyle,
+        commentStyle: commentStyle ?? this.commentStyle,
+        keywordStyle: keywordStyle ?? this.keywordStyle,
+        stringStyle: stringStyle ?? this.stringStyle,
+        punctuationStyle: punctuationStyle ?? this.punctuationStyle,
+        classStyle: classStyle ?? this.classStyle,
+        constantStyle: constantStyle ?? this.constantStyle,
+    );
+  }
+
   static SyntaxHighlighterStyle lightThemeStyle() {
     return SyntaxHighlighterStyle(
       baseStyle: const TextStyle(color: Color(0xFF000000)),
